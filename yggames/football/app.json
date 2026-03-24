@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "YG Football",
+    "slug": "yg-football",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "ygfootball",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "platforms": ["ios", "android"],
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0d2818"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yggames.football"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#0d2818"
+      },
+      "package": "com.yggames.football",
+      "navigationBarColor": "transparent",
+      "edgeToEdgeEnabled": true
+    },
+    "plugins": [
+      "expo-router",
+      "expo-navigation-bar",
+      [
+        "expo-av",
+        {
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

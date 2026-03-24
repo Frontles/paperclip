@@ -1,0 +1,1142 @@
+{
+  "Liverpool": {
+    "name": "Liverpool",
+    "league": "Premier League",
+    "teamShort": "LIV",
+    "colour1": "#C8102E",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/kfaher1737969724.png",
+    "sportsDbName": "Liverpool"
+  },
+  "Manchester City": {
+    "name": "Manchester City",
+    "league": "Premier League",
+    "teamShort": "MCI",
+    "colour1": "#6CABDD",
+    "colour2": "#FFFFFF",
+    "colour3": "#1C2C5B",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vwpvry1467462651.png",
+    "sportsDbName": "Manchester City"
+  },
+  "Real Madrid": {
+    "name": "Real Madrid",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "MAD",
+    "colour1": "#ffffff",
+    "colour2": "#00529F",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vwvwrw1473502969.png",
+    "sportsDbName": "Real Madrid"
+  },
+  "FC Barcelona": {
+    "name": "FC Barcelona",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "FCB",
+    "colour1": "#004d98",
+    "colour2": "#a50044",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/wq9sir1639406443.png",
+    "sportsDbName": "Barcelona"
+  },
+  "Lombardia FC": {
+    "name": "Lombardia FC",
+    "league": "Serie A Enilive",
+    "teamShort": "MIL",
+    "colour1": "#FB090B",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/wvspur1448806617.png",
+    "sportsDbName": "AC Milan"
+  },
+  "Arsenal": {
+    "name": "Arsenal",
+    "league": "Premier League",
+    "teamShort": "ARS",
+    "colour1": "#EF0107",
+    "colour2": "#fbffff",
+    "colour3": "#013373",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/uyhbfe1612467038.png",
+    "sportsDbName": "Arsenal"
+  },
+  "Borussia Dortmund": {
+    "name": "Borussia Dortmund",
+    "league": "Bundesliga",
+    "teamShort": "DOR",
+    "colour1": "#FDE100",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/tqo8ge1716960353.png",
+    "sportsDbName": "Borussia Dortmund"
+  },
+  "Chelsea": {
+    "name": "Chelsea",
+    "league": "Premier League",
+    "teamShort": "CHE",
+    "colour1": "#034694",
+    "colour2": "#FFFFFF",
+    "colour3": "#DBA111",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png",
+    "sportsDbName": "Chelsea"
+  },
+  "Man Utd": {
+    "name": "Man Utd",
+    "league": "Premier League",
+    "teamShort": "MUN",
+    "colour1": "#DA291C",
+    "colour2": "#FBE122",
+    "colour3": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/xzqdr11517660252.png",
+    "sportsDbName": "Manchester United"
+  },
+  "Milano FC": {
+    "name": "Milano FC",
+    "league": "Serie A Enilive",
+    "teamShort": "INT",
+    "colour1": "#010E80",
+    "colour2": "#000000",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ryhu6d1617113103.png",
+    "sportsDbName": "Inter Milan"
+  },
+  "Galatasaray": {
+    "name": "Galatasaray",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "GAL",
+    "colour1": "#FFB600",
+    "colour2": "#AA151B",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/io7jk21767941298.png",
+    "sportsDbName": "Galatasaray"
+  },
+  "Newcastle Utd": {
+    "name": "Newcastle Utd",
+    "league": "Premier League",
+    "teamShort": "NEW",
+    "colour1": "#FFFFFF",
+    "colour2": "#241F20",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/lhwuiz1621593302.png",
+    "sportsDbName": "Newcastle United"
+  },
+  "Fenerbahçe": {
+    "name": "Fenerbahçe",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "FEN",
+    "colour1": "#FFED00",
+    "colour2": "#002B5C",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png",
+    "sportsDbName": "Fenerbahçe"
+  },
+  "Aston Villa": {
+    "name": "Aston Villa",
+    "league": "Premier League",
+    "teamShort": "AVL",
+    "colour1": "#670E36",
+    "colour2": "#95BFE5",
+    "colour3": "#FEE505",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/jykrpv1717309891.png",
+    "sportsDbName": "Aston Villa"
+  },
+  "RB Leipzig": {
+    "name": "RB Leipzig",
+    "league": "Bundesliga",
+    "teamShort": "RBL",
+    "colour1": "#DD013F",
+    "colour2": "#FFFFFF",
+    "colour3": "#0C2043",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/zjgapo1594244951.png",
+    "sportsDbName": "RB Leipzig"
+  },
+  "Fiorentina": {
+    "name": "Fiorentina",
+    "league": "Serie A Enilive",
+    "teamShort": "FIO",
+    "colour1": "#482E92",
+    "colour2": "#FFFFFF",
+    "colour3": "#A29160",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/hc8nhu1656098030.png",
+    "sportsDbName": "Fiorentina"
+  },
+  "Sunderland": {
+    "name": "Sunderland",
+    "league": "Premier League",
+    "teamShort": "SUN",
+    "colour1": "#ff0000",
+    "colour2": "#ffffff",
+    "colour3": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/tprtus1448813498.png",
+    "sportsDbName": "Sunderland"
+  },
+  "Leverkusen": {
+    "name": "Leverkusen",
+    "league": "Bundesliga",
+    "teamShort": "B04",
+    "colour1": "#E32221",
+    "colour2": "#000000",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/3x9k851726760113.png",
+    "sportsDbName": "Bayer Leverkusen"
+  },
+  "Juventus": {
+    "name": "Juventus",
+    "league": "Serie A Enilive",
+    "teamShort": "JUV",
+    "colour1": "#000000",
+    "colour2": "#FFFFFF",
+    "colour3": "#ffc9e1",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/uxf0gr1742983727.png",
+    "sportsDbName": "Juventus"
+  },
+  "Everton": {
+    "name": "Everton",
+    "league": "Premier League",
+    "teamShort": "EVE",
+    "colour1": "#003399",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/eqayrf1523184794.png",
+    "sportsDbName": "Everton"
+  },
+  "OM": {
+    "name": "OM",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "OLM",
+    "colour1": "#00A1DF",
+    "colour2": "#FFFFFF",
+    "colour3": "#bea064",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/uutsyt1473504764.png",
+    "sportsDbName": "Marseille"
+  },
+  "Latium": {
+    "name": "Latium",
+    "league": "Serie A Enilive",
+    "teamShort": "LAZ",
+    "colour1": "#87D8F7",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/rwqyvs1448806608.png",
+    "sportsDbName": "Lazio"
+  },
+  "Bergamo Calcio": {
+    "name": "Bergamo Calcio",
+    "league": "Serie A Enilive",
+    "teamShort": "ATA",
+    "colour1": "#1E71B8",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/lrvxg71534873930.png",
+    "sportsDbName": "Atalanta"
+  },
+  "Real Sociedad": {
+    "name": "Real Sociedad",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "SOC",
+    "colour1": "#0067B1",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vptvpr1473502986.png",
+    "sportsDbName": "Real Sociedad"
+  },
+  "Nott'm Forest": {
+    "name": "Nott'm Forest",
+    "league": "Premier League",
+    "teamShort": "NOT",
+    "colour1": "#E53233",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/bk4qjs1546440351.png",
+    "sportsDbName": "Nottingham Forest"
+  },
+  "Spurs": {
+    "name": "Spurs",
+    "league": "Premier League",
+    "teamShort": "TOT",
+    "colour1": "#FFFFFF",
+    "colour2": "#132257",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/dfyfhl1604094109.png",
+    "sportsDbName": "Tottenham Hotspur"
+  },
+  "VfB Stuttgart": {
+    "name": "VfB Stuttgart",
+    "league": "Bundesliga",
+    "teamShort": "STU",
+    "colour1": "#E32219",
+    "colour2": "#FFFFFF",
+    "colour3": "#FFED00",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/yppyux1473454085.png",
+    "sportsDbName": "Stuttgart"
+  },
+  "AS Monaco": {
+    "name": "AS Monaco",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "MON",
+    "colour1": "#e51b22",
+    "colour2": "#cb9f18",
+    "colour3": "#ffffff",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/exjf5l1678808044.png",
+    "sportsDbName": "Monaco"
+  },
+  "Fulham": {
+    "name": "Fulham",
+    "league": "Premier League",
+    "teamShort": "FUL",
+    "colour1": "#FFFFFF",
+    "colour2": "#000000",
+    "colour3": "#CC0000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/xwwvyt1448811086.png",
+    "sportsDbName": "Fulham"
+  },
+  "Brighton": {
+    "name": "Brighton",
+    "league": "Premier League",
+    "teamShort": "BRI",
+    "colour1": "#0057B8",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ywypts1448810904.png",
+    "sportsDbName": "Brighton and Hove Albion"
+  },
+  "Bologna": {
+    "name": "Bologna",
+    "league": "Serie A Enilive",
+    "teamShort": "BOL",
+    "colour1": "#A21C26",
+    "colour2": "#1A2F48",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/2qi1u31655592366.png",
+    "sportsDbName": "Bologna"
+  },
+  "Frankfurt": {
+    "name": "Frankfurt",
+    "league": "Bundesliga",
+    "teamShort": "SGE",
+    "colour1": "#E1000F",
+    "colour2": "#FFFFFF",
+    "colour3": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/rurwpy1473453269.png",
+    "sportsDbName": "Eintracht Frankfurt"
+  },
+  "Sassuolo": {
+    "name": "Sassuolo",
+    "league": "Serie A Enilive",
+    "teamShort": "SAS",
+    "colour1": "#00A752",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/xystvp1448806138.png",
+    "sportsDbName": "Sassuolo"
+  },
+  "Crystal Palace": {
+    "name": "Crystal Palace",
+    "league": "Premier League",
+    "teamShort": "CRY",
+    "colour1": "#1B458F",
+    "colour2": "#C4122E",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ia6i3m1656014992.png",
+    "sportsDbName": "Crystal Palace"
+  },
+  "Torino": {
+    "name": "Torino",
+    "league": "Serie A Enilive",
+    "teamShort": "TOR",
+    "colour1": "#8A1E03",
+    "colour2": "#FFFFFF",
+    "colour3": "#EEB111",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/xxprty1448806802.png",
+    "sportsDbName": "Torino"
+  },
+  "Paris FC": {
+    "name": "Paris FC",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "PFC",
+    "colour1": "#004170",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/yuvtsy1447594254.png",
+    "sportsDbName": "Paris FC"
+  },
+  "Real Betis": {
+    "name": "Real Betis",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "BET",
+    "colour1": "#0BB363",
+    "colour2": "#ffffff",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/2oqulv1663245386.png",
+    "sportsDbName": "Real Betis"
+  },
+  "Leeds United": {
+    "name": "Leeds United",
+    "league": "Premier League",
+    "teamShort": "LEE",
+    "colour1": "#ffffff",
+    "colour2": "#1D428A",
+    "colour3": "#FFCD00",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/jcgrml1756649030.png",
+    "sportsDbName": "Leeds United"
+  },
+  "Lecce": {
+    "name": "Lecce",
+    "league": "Serie A Enilive",
+    "teamShort": "LEC",
+    "colour1": "#FFF200",
+    "colour2": "#ED1B23",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/j4vznr1567365249.png",
+    "sportsDbName": "Lecce"
+  },
+  "Como": {
+    "name": "Como",
+    "league": "Serie A Enilive",
+    "teamShort": "COM",
+    "colour1": "#114169",
+    "colour2": "#114169",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/02x81t1627405841.png",
+    "sportsDbName": "Como"
+  },
+  "M'gladbach": {
+    "name": "M'gladbach",
+    "league": "Bundesliga",
+    "teamShort": "BMG",
+    "colour1": "#000000",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/sysurw1473453380.png",
+    "sportsDbName": "Borussia Mönchengladbach"
+  },
+  "SV Werder Bremen": {
+    "name": "SV Werder Bremen",
+    "league": "Bundesliga",
+    "teamShort": "SVW",
+    "colour1": "#1d9053",
+    "colour2": "#ffffff",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/tkvqan1716960454.png",
+    "sportsDbName": "Werder Bremen"
+  },
+  "OGC Nice": {
+    "name": "OGC Nice",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "NIC",
+    "colour1": "#000000",
+    "colour2": "#ED1C24",
+    "colour3": "#B59A54",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/msy7ly1621593859.png",
+    "sportsDbName": "Nice"
+  },
+  "Brentford": {
+    "name": "Brentford",
+    "league": "Premier League",
+    "teamShort": "BRE",
+    "colour1": "#e30613",
+    "colour2": "#FFFFFF",
+    "colour3": "#fbb800",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/grv1aw1546453779.png",
+    "sportsDbName": "Brentford"
+  },
+  "Union Berlin": {
+    "name": "Union Berlin",
+    "league": "Bundesliga",
+    "teamShort": "FCU",
+    "colour1": "#EB1923",
+    "colour2": "#ffffff",
+    "colour3": "#FDDC02",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/q0o5001599679795.png",
+    "sportsDbName": "Union Berlin"
+  },
+  "Rayo Vallecano": {
+    "name": "Rayo Vallecano",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "RAY",
+    "colour1": "#e53027",
+    "colour2": "#ffffff",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/nzhu941655595465.png",
+    "sportsDbName": "Rayo Vallecano"
+  },
+  "Celta": {
+    "name": "Celta",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "VIG",
+    "colour1": "#8ac3ee",
+    "colour2": "#E5254E",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/xfjtku1690436219.png",
+    "sportsDbName": "Celta Vigo"
+  },
+  "Burnley": {
+    "name": "Burnley",
+    "league": "Premier League",
+    "teamShort": "BUR",
+    "colour1": "#6C1D45",
+    "colour2": "#99D6EA",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ql7nl31686893820.png",
+    "sportsDbName": "Burnley"
+  },
+  "Wolves": {
+    "name": "Wolves",
+    "league": "Premier League",
+    "teamShort": "WOL",
+    "colour1": "#FDB913",
+    "colour2": "#231F20",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/u9qr031621593327.png",
+    "sportsDbName": "Wolverhampton Wanderers"
+  },
+  "Beşiktaş": {
+    "name": "Beşiktaş",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "BJK",
+    "colour1": "#000000",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/cg07mt1679455607.png",
+    "sportsDbName": "Beşiktaş"
+  },
+  "Cremonese": {
+    "name": "Cremonese",
+    "league": "Serie A Enilive",
+    "teamShort": "CRE",
+    "colour1": "#808285",
+    "colour2": "#ed1c24",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/6ng2vy1579708291.png",
+    "sportsDbName": "Cremonese"
+  },
+  "Udinese": {
+    "name": "Udinese",
+    "league": "Serie A Enilive",
+    "teamShort": "UDI",
+    "colour1": "#FFFFFF",
+    "colour2": "#000000",
+    "colour3": "#8B7D37",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vwvstr1448806811.png",
+    "sportsDbName": "Udinese"
+  },
+  "Hellas Verona": {
+    "name": "Hellas Verona",
+    "league": "Serie A Enilive",
+    "teamShort": "VER",
+    "colour1": "#FFE74A",
+    "colour2": "#005395",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/p6camf1593457737.png",
+    "sportsDbName": "Hellas Verona"
+  },
+  "Trabzonspor": {
+    "name": "Trabzonspor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "TRA",
+    "colour1": "#7B0041",
+    "colour2": "#003DA5",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/43oobe1672951178.png",
+    "sportsDbName": "Trabzonspor"
+  },
+  "Genoa": {
+    "name": "Genoa",
+    "league": "Serie A Enilive",
+    "teamShort": "GEN",
+    "colour1": "#AD1919",
+    "colour2": "#05232F",
+    "colour3": "#FFD400",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/52s8dn1655553600.png",
+    "sportsDbName": "Genoa"
+  },
+  "FC Augsburg": {
+    "name": "FC Augsburg",
+    "league": "Bundesliga",
+    "teamShort": "AUG",
+    "colour1": "#ba3733",
+    "colour2": "#ffffff",
+    "colour3": "#46714d",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/xqyyvq1473453233.png",
+    "sportsDbName": "FC Augsburg"
+  },
+  "RC Lens": {
+    "name": "RC Lens",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "LNS",
+    "colour1": "#fff200",
+    "colour2": "#ec1c24",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/3pxoum1598797195.png",
+    "sportsDbName": "Lens"
+  },
+  "Stade Brestois 29": {
+    "name": "Stade Brestois 29",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "BRS",
+    "colour1": "#ed1c24",
+    "colour2": "#ffffff",
+    "colour3": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/z69be41598797026.png",
+    "sportsDbName": "Brest"
+  },
+  "Cagliari": {
+    "name": "Cagliari",
+    "league": "Serie A Enilive",
+    "teamShort": "CAG",
+    "colour1": "#002350",
+    "colour2": "#AD002A",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/wvsvxt1447534471.png",
+    "sportsDbName": "Cagliari"
+  },
+  "Konyaspor": {
+    "name": "Konyaspor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "KON",
+    "colour1": "#006838",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/rxwptr1448203413.png",
+    "sportsDbName": "Konyaspor"
+  },
+  "D. Alavés": {
+    "name": "D. Alavés",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "ALA",
+    "colour1": "#0761af",
+    "colour2": "#ffffff",
+    "colour3": "#009ad7",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/mfn99h1734673842.png",
+    "sportsDbName": "Deportivo Alavés"
+  },
+  "FC Nantes": {
+    "name": "FC Nantes",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "NAN",
+    "colour1": "#FCD405",
+    "colour2": "#1B8F3A",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/mla9x61678808018.png",
+    "sportsDbName": "Nantes"
+  },
+  "Kasımpaşa": {
+    "name": "Kasımpaşa",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "KAS",
+    "colour1": "#003DA5",
+    "colour2": "#C8102E",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/uryxtp1448203236.png",
+    "sportsDbName": "Kasımpaşa"
+  },
+  "Angers SCO": {
+    "name": "Angers SCO",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "ANG",
+    "colour1": "#000000",
+    "colour2": "#ffffff",
+    "colour3": "#d9c395",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ix6q4w1678808069.png",
+    "sportsDbName": "Angers"
+  },
+  "Elche CF": {
+    "name": "Elche CF",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "ELC",
+    "colour1": "#05642c",
+    "colour2": "#ffffff",
+    "colour3": "#e6c777",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/e4vaw51655594332.png",
+    "sportsDbName": "Elche"
+  },
+  "Kocaelispor": {
+    "name": "Kocaelispor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "KOC",
+    "colour1": "#006838",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/f6erki1626445224.png",
+    "sportsDbName": "Kocaelispor"
+  },
+  "Pisa": {
+    "name": "Pisa",
+    "league": "Serie A Enilive",
+    "teamShort": "PIS",
+    "colour1": "#003DA5",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/2eso9w1579708309.png",
+    "sportsDbName": "Pisa"
+  },
+  "R. Oviedo": {
+    "name": "R. Oviedo",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "OVI",
+    "colour1": "#003DA5",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/yuwqus1447590681.png",
+    "sportsDbName": "Real Oviedo"
+  },
+  "Heidenheim": {
+    "name": "Heidenheim",
+    "league": "Bundesliga",
+    "teamShort": "HDH",
+    "colour1": "#e2001a",
+    "colour2": "#003b79",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/lbj7g01608236988.png",
+    "sportsDbName": "FC Heidenheim"
+  },
+  "Parma": {
+    "name": "Parma",
+    "league": "Serie A Enilive",
+    "teamShort": "PAR",
+    "colour1": "#ffffff",
+    "colour2": "#1b4094",
+    "colour3": "#ffd200",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/6yiaxs1627406063.png",
+    "sportsDbName": "Parma"
+  },
+  "Alanyaspor": {
+    "name": "Alanyaspor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "ALN",
+    "colour1": "#FF6600",
+    "colour2": "#006838",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/9fr3071601667898.png",
+    "sportsDbName": "Alanyaspor"
+  },
+  "FC Lorient": {
+    "name": "FC Lorient",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "LOR",
+    "colour1": "#f58113",
+    "colour2": "#000000",
+    "colour3": "#ffffff",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/sxsttw1473504748.png",
+    "sportsDbName": "Lorient"
+  },
+  "Başakşehir": {
+    "name": "Başakşehir",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "BAS",
+    "colour1": "#F37021",
+    "colour2": "#1C2C5B",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/895mqt1685993958.png",
+    "sportsDbName": "İstanbul Başakşehir"
+  },
+  "Levante UD": {
+    "name": "Levante UD",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "LEV",
+    "colour1": "#C60B46",
+    "colour2": null,
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/xwtxsx1473503739.png",
+    "sportsDbName": "Levante"
+  },
+  "Gençlerbirliği": {
+    "name": "Gençlerbirliği",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "GEN",
+    "colour1": "#C8102E",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/5hnd1c1639569938.png",
+    "sportsDbName": "Gençlerbirliği"
+  },
+  "Samsunspor": {
+    "name": "Samsunspor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "SAM",
+    "colour1": "#C8102E",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vz05y71679456608.png",
+    "sportsDbName": "Samsunspor"
+  },
+  "Karagümrük SK": {
+    "name": "Karagümrük SK",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "KRG",
+    "colour1": "#7B0041",
+    "colour2": "#006838",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/bfb84y1580847945.png",
+    "sportsDbName": "Fatih Karagümrük"
+  },
+  "Antalyaspor": {
+    "name": "Antalyaspor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "ANT",
+    "colour1": "#C8102E",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vqoral1601669436.png",
+    "sportsDbName": "Antalyaspor"
+  },
+  "Kayserispor": {
+    "name": "Kayserispor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "KAY",
+    "colour1": "#FFB600",
+    "colour2": "#C8102E",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/bvskgi1601668985.png",
+    "sportsDbName": "Kayserispor"
+  },
+  "Eyüpspor": {
+    "name": "Eyüpspor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "EYU",
+    "colour1": "#7B0041",
+    "colour2": "#FFB600",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/7fb0ub1626445710.png",
+    "sportsDbName": "Eyüpspor"
+  },
+  "Göztepe": {
+    "name": "Göztepe",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "GOZ",
+    "colour1": "#FFB600",
+    "colour2": "#C8102E",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/9jwk7o1513952059.png",
+    "sportsDbName": "Göztepe"
+  },
+  "FC Metz": {
+    "name": "FC Metz",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "MTZ",
+    "colour1": "#6E0F12",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/1iuew61688452857.png",
+    "sportsDbName": "Metz"
+  },
+  "FC Bayern München": {
+    "name": "FC Bayern München",
+    "league": "Bundesliga",
+    "teamShort": "BAY",
+    "colour1": "#dc052d",
+    "colour2": "#ffffff",
+    "colour3": "#0066b2",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/01ogkh1716960412.png",
+    "sportsDbName": "Bayern Munich"
+  },
+  "Atlético de Madrid": {
+    "name": "Atlético de Madrid",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "ATM",
+    "colour1": "#CB3524",
+    "colour2": "#272e61",
+    "colour3": "#ffffff",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/0ulh3q1719984315.png",
+    "sportsDbName": "Atlético Madrid"
+  },
+  "SSC Napoli": {
+    "name": "SSC Napoli",
+    "league": "Serie A Enilive",
+    "teamShort": "NAP",
+    "colour1": "#12A0D7",
+    "colour2": "#003C82",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/l8qyxv1742982541.png",
+    "sportsDbName": "Napoli"
+  },
+  "AS Roma": {
+    "name": "AS Roma",
+    "league": "Serie A Enilive",
+    "teamShort": "ROM",
+    "colour1": "#8E1F2F",
+    "colour2": "#F0BC42",
+    "colour3": "#CACACC",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/jwro2s1760820674.png",
+    "sportsDbName": "Roma"
+  },
+  "Athletic Club": {
+    "name": "Athletic Club",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "ATH",
+    "colour1": "#ee2523",
+    "colour2": "#ffffff",
+    "colour3": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/68w7fe1639408210.png",
+    "sportsDbName": "Athletic Bilbao"
+  },
+  "Villarreal CF": {
+    "name": "Villarreal CF",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "VLR",
+    "colour1": "#005187",
+    "colour2": "#FFE667",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vrypqy1473503073.png",
+    "sportsDbName": "Villarreal"
+  },
+  "TSG Hoffenheim": {
+    "name": "TSG Hoffenheim",
+    "league": "Bundesliga",
+    "teamShort": "HOF",
+    "colour1": "#1961B5",
+    "colour2": "#FFFFFF",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/9hwvb21621593919.png",
+    "sportsDbName": "Hoffenheim"
+  },
+  "SC Freiburg": {
+    "name": "SC Freiburg",
+    "league": "Bundesliga",
+    "teamShort": "FRE",
+    "colour1": "#000000",
+    "colour2": "#FFFFFF",
+    "colour3": "#FD1220",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/urwtup1473453288.png",
+    "sportsDbName": "Freiburg"
+  },
+  "CA Osasuna": {
+    "name": "CA Osasuna",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "OSA",
+    "colour1": "#0A346F",
+    "colour2": "#D91A21",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/rvspvt1473502960.png",
+    "sportsDbName": "Osasuna"
+  },
+  "Valencia CF": {
+    "name": "Valencia CF",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "VAL",
+    "colour1": "#FF671F",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/dm8l6o1655594864.png",
+    "sportsDbName": "Valencia"
+  },
+  "1. FSV Mainz 05": {
+    "name": "1. FSV Mainz 05",
+    "league": "Bundesliga",
+    "teamShort": "M05",
+    "colour1": "#C3141E",
+    "colour2": "#FFFFFF",
+    "colour3": "#918F90",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/fhm9v51552134916.png",
+    "sportsDbName": "Mainz"
+  },
+  "Getafe CF": {
+    "name": "Getafe CF",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "GET",
+    "colour1": "#005999",
+    "colour2": "#C43A2F",
+    "colour3": "#FCED0B",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/eyh2891655594452.png",
+    "sportsDbName": "Getafe"
+  },
+  "RCD Mallorca": {
+    "name": "RCD Mallorca",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "MLA",
+    "colour1": "#E20613",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ssptsx1473503730.png",
+    "sportsDbName": "Mallorca"
+  },
+  "Stade Rennais FC": {
+    "name": "Stade Rennais FC",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "REN",
+    "colour1": "#E13327",
+    "colour2": "#000000",
+    "colour3": "#FCBC17",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ypturx1473504818.png",
+    "sportsDbName": "Rennes"
+  },
+  "Girona FC": {
+    "name": "Girona FC",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "GIR",
+    "colour1": "#cd2534",
+    "colour2": "#ffffff",
+    "colour3": "#edda35",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/kfu7zu1659897499.png",
+    "sportsDbName": "Girona"
+  },
+  "AFC Bournemouth": {
+    "name": "AFC Bournemouth",
+    "league": "Premier League",
+    "teamShort": "BOU",
+    "colour1": "#B50E12",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/y08nak1534071116.png",
+    "sportsDbName": "Bournemouth"
+  },
+  "LOSC Lille": {
+    "name": "LOSC Lille",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "LIL",
+    "colour1": "#e01e13",
+    "colour2": "#24216a",
+    "colour3": "#ffffff",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/2giize1534005340.png",
+    "sportsDbName": "Lille"
+  },
+  "West Ham": {
+    "name": "West Ham",
+    "league": "Premier League",
+    "teamShort": "WHU",
+    "colour1": "#7A263A",
+    "colour2": "#1BB1E7",
+    "colour3": "#F3D459",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/yutyxs1467459956.png",
+    "sportsDbName": "West Ham United"
+  },
+  "VfL Wolfsburg": {
+    "name": "VfL Wolfsburg",
+    "league": "Bundesliga",
+    "teamShort": "WOB",
+    "colour1": "#65b32e",
+    "colour2": "#ffffff",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/07kp421599680274.png",
+    "sportsDbName": "Wolfsburg"
+  },
+  "RCD Espanyol": {
+    "name": "RCD Espanyol",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "ESP",
+    "colour1": "#007FC8",
+    "colour2": "#FFFFFF",
+    "colour3": "#DF1116",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/867nzz1681703222.png",
+    "sportsDbName": "Espanyol"
+  },
+  "Toulouse FC": {
+    "name": "Toulouse FC",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "TOU",
+    "colour1": "#492359",
+    "colour2": "#FFFFFF",
+    "colour3": "#F0194E",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/17eqox1688449282.png",
+    "sportsDbName": "Toulouse"
+  },
+  "OL": {
+    "name": "OL",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "LYO",
+    "colour1": "#ffffff",
+    "colour2": "#0f23aa",
+    "colour3": "#f40043",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png",
+    "sportsDbName": "Lyon"
+  },
+  "Strasbourg": {
+    "name": "Strasbourg",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "STR",
+    "colour1": "#009FE3",
+    "colour2": "#DC2F34",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/b8k77w1766625501.png",
+    "sportsDbName": "Strasbourg"
+  },
+  "Sevilla FC": {
+    "name": "Sevilla FC",
+    "league": "LALIGA EA SPORTS",
+    "teamShort": "SEV",
+    "colour1": "#FFFFFF",
+    "colour2": "#F43333",
+    "colour3": "#C79100",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vpsqqx1473502977.png",
+    "sportsDbName": "Sevilla"
+  },
+  "FC St. Pauli": {
+    "name": "FC St. Pauli",
+    "league": "Bundesliga",
+    "teamShort": "FCP",
+    "colour1": "#624839",
+    "colour2": "#e30613",
+    "colour3": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/5qupxa1608237013.png",
+    "sportsDbName": "St Pauli"
+  },
+  "AJ Auxerre": {
+    "name": "AJ Auxerre",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "AUX",
+    "colour1": "#4087bf",
+    "colour2": "#ffffff",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/lzdtbf1658753355.png",
+    "sportsDbName": "Auxerre"
+  },
+  "Çaykur Rizespor": {
+    "name": "Çaykur Rizespor",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "RIZ",
+    "colour1": "#006838",
+    "colour2": "#003DA5",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/t7senr1657195719.png",
+    "sportsDbName": "Rizespor"
+  },
+  "Gaziantep": {
+    "name": "Gaziantep",
+    "league": "Trendyol Süper Lig",
+    "teamShort": "GAZ",
+    "colour1": "#C8102E",
+    "colour2": "#000000",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/54j6ik1579458093.png",
+    "sportsDbName": "Gaziantep"
+  },
+  "Hamburger SV": {
+    "name": "Hamburger SV",
+    "league": "Bundesliga",
+    "teamShort": "HSV",
+    "colour1": "#0a3f86",
+    "colour2": "#ffffff",
+    "colour3": null,
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/tvtppt1473453296.png",
+    "sportsDbName": "Hamburg"
+  },
+  "Havre AC": {
+    "name": "Havre AC",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "HAC",
+    "colour1": "#79bce7",
+    "colour2": "#193260",
+    "colour3": "#ffffff",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/aikowk1546475003.png",
+    "sportsDbName": "Le Havre"
+  },
+  "Paris SG": {
+    "name": "Paris SG",
+    "league": "Ligue 1 McDonald's",
+    "teamShort": "PSG",
+    "colour1": "#004170",
+    "colour2": "#FFFFFF",
+    "colour3": "#DA291C",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/rwqrrq1473504808.png",
+    "sportsDbName": "Paris SG"
+  },
+  "1. FC Köln": {
+    "name": "1. FC Köln",
+    "league": "Bundesliga",
+    "teamShort": "KOL",
+    "colour1": "#ED1C24",
+    "colour2": "#FFFFFF",
+    "colour3": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/2j1sc91566049407.png",
+    "sportsDbName": "FC Köln"
+  }
+}

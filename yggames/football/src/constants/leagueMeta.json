@@ -1,0 +1,32 @@
+{
+  "Premier League": {
+    "name": "English Premier League",
+    "badge": "https://r2.thesportsdb.com/images/media/league/badge/gasy9d1737743125.png",
+    "logo": "https://r2.thesportsdb.com/images/media/league/logo/4c377s1535214890.png"
+  },
+  "LALIGA EA SPORTS": {
+    "name": "Spanish La Liga",
+    "badge": "https://r2.thesportsdb.com/images/media/league/badge/ja4it51687628717.png",
+    "logo": "https://r2.thesportsdb.com/images/media/league/logo/gq4b1r1687707889.png"
+  },
+  "Serie A Enilive": {
+    "name": "Italian Serie A",
+    "badge": "https://r2.thesportsdb.com/images/media/league/badge/67q3q21679951383.png",
+    "logo": "https://r2.thesportsdb.com/images/media/league/logo/b0hv7o1719640507.png"
+  },
+  "Bundesliga": {
+    "name": "German Bundesliga",
+    "badge": "https://r2.thesportsdb.com/images/media/league/badge/teqh1b1679952008.png",
+    "logo": "https://r2.thesportsdb.com/images/media/league/logo/620ayu1534764709.png"
+  },
+  "Ligue 1 McDonald's": {
+    "name": "French Ligue 1",
+    "badge": "https://r2.thesportsdb.com/images/media/league/badge/9f7z9d1742983155.png",
+    "logo": "https://r2.thesportsdb.com/images/media/league/logo/pp71fp1719637991.png"
+  },
+  "Trendyol Süper Lig": {
+    "name": "Trendyol Süper Lig",
+    "badge": "https://ii.upla.com.tr/2026/03/21/iJvr8.png",
+    "logo": "https://ii.upla.com.tr/2026/03/21/iJvr8.png"
+  }
+}
