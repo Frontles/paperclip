@@ -7,9 +7,12 @@ import {
   Text,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { useSound } from '@/hooks/useSound';
 import { soundService } from '@/services/soundService';
+import { getMatchBadge } from '@/utils/getMatchBadge';
+import { getCompetitionColors } from '@/constants/competitionMeta';
 import { Colors } from '@/constants/colors';
 import { useMatchStore } from '@/stores/matchStore';
 import { useArenaEngine } from '@/hooks/useArenaEngine';
@@ -38,6 +41,10 @@ export default function ArenaGameScreen() {
   const addEvent = useMatchStore((s) => s.addEvent);
   const setCurrentMinute = useMatchStore((s) => s.setCurrentMinute);
   const setExtraTime = useMatchStore((s) => s.setExtraTime);
+  const competitionType = useMatchStore((s) => s.competitionType);
+  const aggregateEnabled = useMatchStore((s) => s.aggregateEnabled);
+  const homeAggregate = useMatchStore((s) => s.homeAggregate);
+  const awayAggregate = useMatchStore((s) => s.awayAggregate);
 
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [isRunning, setIsRunning] = useState(true);
@@ -125,7 +132,7 @@ export default function ArenaGameScreen() {
 
   const handleRedCardSound = useCallback(() => play('red_card'), [play]);
 
-  const { toasts, handleGoal: handleGoalEvent, handleRedCardCheck, removeBallForRedCard } =
+  const { toasts, handleGoal: handleGoalEvent, handleRedCardCheck, handleYellowCardCheck, removeBallForRedCard } =
     useArenaEvents({
       homeTeamName: homeName,
       awayTeamName: awayName,
@@ -148,6 +155,7 @@ export default function ArenaGameScreen() {
   const { timerLabel, isExtraTime, extraMinute, matchMinute } = useMatchTimer({
     isRunning,
     onRedCardCheck: handleRedCardCheck,
+    onYellowCardCheck: handleYellowCardCheck,
     onMatchEnd: handleMatchEnd,
   });
 
@@ -220,7 +228,8 @@ export default function ArenaGameScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor={Colors.surface} />
+      <StatusBar barStyle="light-content" backgroundColor={Colors.surface} translucent />
+      <SafeAreaView style={{ backgroundColor: Colors.surface }} edges={['top']} />
 
       <ScoreBoard
         homeName={homeName}
@@ -239,6 +248,11 @@ export default function ArenaGameScreen() {
         homeColor2={homeTeam?.secondaryColor}
         awayColor2={awayTeam?.secondaryColor}
         leagueName={homeTeam?.league}
+        competitionBadge={getMatchBadge(competitionType, homeTeam?.league, awayTeam?.league)}
+        bgColor={getCompetitionColors(competitionType).surface}
+        aggregateEnabled={aggregateEnabled}
+        aggregateHome={homeAggregate}
+        aggregateAway={awayAggregate}
         onQuit={handleQuitPress}
       />
 
@@ -326,7 +340,7 @@ export default function ArenaGameScreen() {
         )}
 
         {/* Event Toasts */}
-        <EventToastStack toasts={toasts} />
+        <EventToastStack toasts={toasts} goalBg={getCompetitionColors(competitionType).surfaceLight} goalBorder={getCompetitionColors(competitionType).accent} />
       </View>
 
       {/* Ownership Bar */}

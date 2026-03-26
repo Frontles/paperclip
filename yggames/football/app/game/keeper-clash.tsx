@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import ReAnimated, {
   runOnJS,
   useAnimatedStyle,
@@ -17,6 +18,8 @@ import ReAnimated, {
 import { useRouter } from 'expo-router';
 import { useSound } from '@/hooks/useSound';
 import { soundService } from '@/services/soundService';
+import { getMatchBadge } from '@/utils/getMatchBadge';
+import { getCompetitionColors } from '@/constants/competitionMeta';
 import { Colors } from '@/constants/colors';
 import { useMatchStore } from '@/stores/matchStore';
 import { useKeeperClashEngine, CounterAttackStatus } from '@/hooks/useKeeperClashEngine';
@@ -91,6 +94,10 @@ export default function KeeperClashScreen() {
   const addEvent = useMatchStore((s) => s.addEvent);
   const setCurrentMinute = useMatchStore((s) => s.setCurrentMinute);
   const setExtraTime = useMatchStore((s) => s.setExtraTime);
+  const competitionType = useMatchStore((s) => s.competitionType);
+  const aggregateEnabled = useMatchStore((s) => s.aggregateEnabled);
+  const homeAggregate = useMatchStore((s) => s.homeAggregate);
+  const awayAggregate = useMatchStore((s) => s.awayAggregate);
 
   const [playfieldSize, setPlayfieldSize] = useState({ width: 0, height: 0 });
   const [isRunning, setIsRunning] = useState(true);
@@ -202,7 +209,7 @@ export default function KeeperClashScreen() {
 
   // ─── Match events ─────────────────────────────────────────────
 
-  const { toasts, handleGoal: handleGoalEvent, handleRedCardCheck } = useMatchEvents({
+  const { toasts, handleGoal: handleGoalEvent, handleRedCardCheck, handleYellowCardCheck } = useMatchEvents({
     homeTeamName: homeName,
     awayTeamName: awayName,
     homePlayers,
@@ -224,6 +231,7 @@ export default function KeeperClashScreen() {
   const { timerLabel, isExtraTime, extraMinute, matchMinute } = useMatchTimer({
     isRunning,
     onRedCardCheck: handleRedCardCheck,
+    onYellowCardCheck: handleYellowCardCheck,
     onMatchEnd: handleMatchEnd,
   });
 
@@ -320,7 +328,8 @@ export default function KeeperClashScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor={Colors.surface} />
+      <StatusBar barStyle="light-content" backgroundColor={Colors.surface} translucent />
+      <SafeAreaView style={{ backgroundColor: Colors.surface }} edges={['top']} />
 
       <ScoreBoard
         homeName={homeName}
@@ -339,6 +348,11 @@ export default function KeeperClashScreen() {
         homeColor2={homeTeam?.secondaryColor}
         awayColor2={awayTeam?.secondaryColor}
         leagueName={homeTeam?.league}
+        competitionBadge={getMatchBadge(competitionType, homeTeam?.league, awayTeam?.league)}
+        bgColor={getCompetitionColors(competitionType).surface}
+        aggregateEnabled={aggregateEnabled}
+        aggregateHome={homeAggregate}
+        aggregateAway={awayAggregate}
         onQuit={handleQuitPress}
       />
 
@@ -445,7 +459,7 @@ export default function KeeperClashScreen() {
         </View>
 
         {/* Event toasts sit over the whole playfield */}
-        <EventToastStack toasts={toasts} />
+        <EventToastStack toasts={toasts} goalBg={getCompetitionColors(competitionType).surfaceLight} goalBorder={getCompetitionColors(competitionType).accent} />
       </View>
 
       {/* Counter-attack banner */}

@@ -1,0 +1,303 @@
+{
+  "England": {
+    "continent": "Europe",
+    "teamShort": "ENG",
+    "primaryColor": "#FFFFFF",
+    "secondaryColor": "#1A2B5E",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png"
+  },
+  "Germany": {
+    "continent": "Europe",
+    "teamShort": "GER",
+    "primaryColor": "#FFFFFF",
+    "secondaryColor": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png"
+  },
+  "Spain": {
+    "continent": "Europe",
+    "teamShort": "ESP",
+    "primaryColor": "#AA151B",
+    "secondaryColor": "#F1BF00",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png"
+  },
+  "France": {
+    "continent": "Europe",
+    "teamShort": "FRA",
+    "primaryColor": "#002395",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png"
+  },
+  "Norway": {
+    "continent": "Europe",
+    "teamShort": "NOR",
+    "primaryColor": "#EF2B2D",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png"
+  },
+  "Holland": {
+    "continent": "Europe",
+    "teamShort": "NED",
+    "primaryColor": "#FF6600",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png"
+  },
+  "Republic of Ireland": {
+    "continent": "Europe",
+    "teamShort": "IRL",
+    "primaryColor": "#169B62",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/3vq2cl1679073105.png"
+  },
+  "Portugal": {
+    "continent": "Europe",
+    "teamShort": "POR",
+    "primaryColor": "#FF0000",
+    "secondaryColor": "#006600",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png"
+  },
+  "Sweden": {
+    "continent": "Europe",
+    "teamShort": "SWE",
+    "primaryColor": "#FECC02",
+    "secondaryColor": "#006AA7",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/h5adzg1591981772.png"
+  },
+  "Denmark": {
+    "continent": "Europe",
+    "teamShort": "DEN",
+    "primaryColor": "#C8102E",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/e13arj1717365623.png"
+  },
+  "Romania": {
+    "continent": "Europe",
+    "teamShort": "ROU",
+    "primaryColor": "#FCD116",
+    "secondaryColor": "#002B7F",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/w903wb1689198300.png"
+  },
+  "Italy": {
+    "continent": "Europe",
+    "teamShort": "ITA",
+    "primaryColor": "#0066B3",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/fxijcp1726167035.png"
+  },
+  "Poland": {
+    "continent": "Europe",
+    "teamShort": "POL",
+    "primaryColor": "#FFFFFF",
+    "secondaryColor": "#DC143C",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ttvrxy1455466076.png"
+  },
+  "Belgium": {
+    "continent": "Europe",
+    "teamShort": "BEL",
+    "primaryColor": "#ED2939",
+    "secondaryColor": "#000000",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png"
+  },
+  "Scotland": {
+    "continent": "Europe",
+    "teamShort": "SCO",
+    "primaryColor": "#003399",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/3691i11552945146.png"
+  },
+  "Turkey": {
+    "continent": "Europe",
+    "teamShort": "TUR",
+    "primaryColor": "#E30A17",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png"
+  },
+  "Switzerland": {
+    "continent": "Europe",
+    "teamShort": "SUI",
+    "primaryColor": "#FF0000",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png"
+  },
+  "Austria": {
+    "continent": "Europe",
+    "teamShort": "AUT",
+    "primaryColor": "#ED2939",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/874p631628721400.png"
+  },
+  "Croatia": {
+    "continent": "Europe",
+    "teamShort": "CRO",
+    "primaryColor": "#FF0000",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png"
+  },
+  "Wales": {
+    "continent": "Europe",
+    "teamShort": "WAL",
+    "primaryColor": "#C8102E",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/pdayn21591983222.png"
+  },
+  "Ukraine": {
+    "continent": "Europe",
+    "teamShort": "UKR",
+    "primaryColor": "#FFD700",
+    "secondaryColor": "#0057B7",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/k36g2e1591982718.png"
+  },
+  "Czech Republic": {
+    "continent": "Europe",
+    "teamShort": "CZE",
+    "primaryColor": "#FFFFFF",
+    "secondaryColor": "#D7141A",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png"
+  },
+  "Argentina": {
+    "continent": "World",
+    "teamShort": "ARG",
+    "primaryColor": "#75AADB",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png"
+  },
+  "Brazil": {
+    "continent": "World",
+    "teamShort": "BRA",
+    "primaryColor": "#FFDF00",
+    "secondaryColor": "#009739",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/jl6dip1726167280.png"
+  },
+  "Korea Republic": {
+    "continent": "World",
+    "teamShort": "KOR",
+    "primaryColor": "#CD2E3A",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/a8nqfs1589564916.png"
+  },
+  "China PR": {
+    "continent": "World",
+    "teamShort": "CHN",
+    "primaryColor": "#DE2910",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/pycrnz1710606856.png"
+  },
+  "United States": {
+    "continent": "World",
+    "teamShort": "USA",
+    "primaryColor": "#002868",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png"
+  },
+  "Australia": {
+    "continent": "World",
+    "teamShort": "AUS",
+    "primaryColor": "#FFB81C",
+    "secondaryColor": "#00843D",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png"
+  },
+  "Saudi Arabia": {
+    "continent": "World",
+    "teamShort": "KSA",
+    "primaryColor": "#006C35",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png"
+  },
+  "India": {
+    "continent": "World",
+    "teamShort": "IND",
+    "primaryColor": "#0066B3",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/kgpver1597857601.png"
+  },
+  "Uruguay": {
+    "continent": "World",
+    "teamShort": "URU",
+    "primaryColor": "#5CBFEB",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/6vjbr11726167756.png"
+  },
+  "Colombia": {
+    "continent": "World",
+    "teamShort": "COL",
+    "primaryColor": "#FCD116",
+    "secondaryColor": "#003893",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png"
+  },
+  "Paraguay": {
+    "continent": "World",
+    "teamShort": "PAR",
+    "primaryColor": "#DA121A",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png"
+  },
+  "Ghana": {
+    "continent": "World",
+    "teamShort": "GHA",
+    "primaryColor": "#FFFFFF",
+    "secondaryColor": "#006B3F",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png"
+  },
+  "Morocco": {
+    "continent": "World",
+    "teamShort": "MAR",
+    "primaryColor": "#C1272D",
+    "secondaryColor": "#006233",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png"
+  },
+  "Ecuador": {
+    "continent": "World",
+    "teamShort": "ECU",
+    "primaryColor": "#FFD100",
+    "secondaryColor": "#003DA5",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/47wv2y1591989301.png"
+  },
+  "Nigeria": {
+    "continent": "World",
+    "teamShort": "NGA",
+    "primaryColor": "#008751",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/qruyxr1455466056.png"
+  },
+  "Côte d'Ivoire": {
+    "continent": "World",
+    "teamShort": "CIV",
+    "primaryColor": "#FF8200",
+    "secondaryColor": "#009A44",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png"
+  },
+  "Japan": {
+    "continent": "World",
+    "teamShort": "JPN",
+    "primaryColor": "#002395",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png"
+  },
+  "Venezuela": {
+    "continent": "World",
+    "teamShort": "VEN",
+    "primaryColor": "#7B1F2E",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/x167yg1690791367.png"
+  },
+  "Peru": {
+    "continent": "World",
+    "teamShort": "PER",
+    "primaryColor": "#FFFFFF",
+    "secondaryColor": "#D91023",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/unszat1529144812.png"
+  },
+  "Chile": {
+    "continent": "World",
+    "teamShort": "CHI",
+    "primaryColor": "#D52B1E",
+    "secondaryColor": "#FFFFFF",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/5xjsy41591988732.png"
+  },
+  "Senegal": {
+    "continent": "World",
+    "teamShort": "SEN",
+    "primaryColor": "#FFFFFF",
+    "secondaryColor": "#00853F",
+    "badge": "https://r2.thesportsdb.com/images/media/team/badge/wh8dya1526727459.png"
+  }
+}

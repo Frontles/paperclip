@@ -9,6 +9,7 @@ import type { Player, Team, League } from '@/types/index';
 import { POSITION_MAP, LEAGUE_DISPLAY_NAMES } from '@/types/index';
 import rawPlayers from '@/data/players.json';
 import teamMetaData from '@/constants/teamMeta.json';
+import nationalTeamMetaData from '@/constants/nationalTeamMeta.json';
 
 // ─── Types for raw JSON shape ─────────────────────────────────
 
@@ -76,17 +77,26 @@ const teamMeta = teamMetaData as Record<string, {
   badge: string | null;
 }>;
 
+const nationalMeta = nationalTeamMetaData as Record<string, {
+  continent: string;
+  teamShort: string;
+  primaryColor: string;
+  secondaryColor: string;
+  badge: string | null;
+}>;
+
 for (const [teamName, players] of playersByTeam) {
   const league = players[0].league;
   const meta = teamMeta[teamName];
+  const natMeta = nationalMeta[teamName];
   teamMap.set(teamName, {
     name: teamName,
     league,
     players,
-    primaryColor: meta?.colour1 ?? '#FFFFFF',
-    secondaryColor: meta?.colour2 ?? '#000000',
-    badge: meta?.badge ?? null,
-    teamShort: meta?.teamShort ?? null,
+    primaryColor: meta?.colour1 ?? natMeta?.primaryColor ?? '#FFFFFF',
+    secondaryColor: meta?.colour2 ?? natMeta?.secondaryColor ?? '#000000',
+    badge: meta?.badge ?? natMeta?.badge ?? null,
+    teamShort: meta?.teamShort ?? natMeta?.teamShort ?? null,
   });
 }
 

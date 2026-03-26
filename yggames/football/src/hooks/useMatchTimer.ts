@@ -42,6 +42,7 @@ export interface MatchTimerState {
 export interface UseMatchTimerOptions {
   isRunning: boolean;
   onRedCardCheck: (minute: number) => void;
+  onYellowCardCheck?: (minute: number) => void;
   onMatchEnd: () => void;
   onPhaseChange?: (phase: Phase) => void;
   isDraw?: boolean; // skor berabere mi
@@ -50,6 +51,7 @@ export interface UseMatchTimerOptions {
 export function useMatchTimer({
   isRunning,
   onRedCardCheck,
+  onYellowCardCheck,
   onMatchEnd,
   onPhaseChange,
   isDraw,
@@ -77,11 +79,27 @@ export function useMatchTimer({
 
   const onRedCardCheckRef = useRef(onRedCardCheck);
   onRedCardCheckRef.current = onRedCardCheck;
+  const onYellowCardCheckRef = useRef(onYellowCardCheck);
+  onYellowCardCheckRef.current = onYellowCardCheck;
   const onMatchEndRef = useRef(onMatchEnd);
   onMatchEndRef.current = onMatchEnd;
   const onPhaseChangeRef = useRef(onPhaseChange);
   onPhaseChangeRef.current = onPhaseChange;
   const checkedMinutesRef = useRef<Set<number>>(new Set());
+
+  // Rastgele kart check dakikaları — her periyotta (10-15 dk) rastgele bir dakika
+  const redCheckMinutes = useRef(
+    GameConfig.redCardCheckMinutes.map((base, i, arr) => {
+      const next = arr[i + 1] ?? base + 15;
+      return base + Math.floor(Math.random() * (next - base));
+    })
+  ).current;
+  const yellowCheckMinutes = useRef(
+    GameConfig.yellowCardCheckMinutes.map((base, i, arr) => {
+      const next = arr[i + 1] ?? base + 10;
+      return base + Math.floor(Math.random() * (next - base));
+    })
+  ).current;
 
   // Pause phases (devre arası, uzatma intro) auto-advance after 3 seconds
   useEffect(() => {
@@ -119,13 +137,22 @@ export function useMatchTimer({
 
       const minute = prev.matchMinute + 1;
 
-      // Red card check
+      // Red card check (rastgele dakikalarda)
       if (
-        GameConfig.redCardCheckMinutes.includes(minute) &&
+        redCheckMinutes.includes(minute) &&
         !checkedMinutesRef.current.has(minute)
       ) {
         checkedMinutesRef.current.add(minute);
         setTimeout(() => onRedCardCheckRef.current(minute), 0);
+      }
+
+      // Yellow card check (rastgele dakikalarda)
+      if (
+        yellowCheckMinutes.includes(minute) &&
+        !checkedMinutesRef.current.has(minute + 1000)
+      ) {
+        checkedMinutesRef.current.add(minute + 1000);
+        setTimeout(() => onYellowCardCheckRef.current?.(minute), 0);
       }
 
       // Devre sonuna ulaştık mı?

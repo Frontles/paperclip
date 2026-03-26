@@ -39,7 +39,7 @@ export interface League {
 
 export interface MatchEvent {
   id: string;
-  type: 'goal' | 'red_card';
+  type: 'goal' | 'red_card' | 'yellow_card';
   minute: number;
   teamName: string;
   playerId: number;
@@ -81,4 +81,6 @@ export const LEAGUE_DISPLAY_NAMES: Record<string, string> = {
   Bundesliga: 'Bundesliga',
   'Trendyol Süper Lig': 'Süper Lig',
   "Ligue 1 McDonald's": 'Ligue 1',
+  'Europe': 'Europe',
+  'World': 'World',
 };

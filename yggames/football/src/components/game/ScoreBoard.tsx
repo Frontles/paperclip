@@ -23,6 +23,11 @@ export interface ScoreBoardProps {
   awayColor2?: string;
   leagueName?: string;
   onQuit?: () => void;
+  bgColor?: string;
+  competitionBadge?: string | null;
+  aggregateHome?: number;
+  aggregateAway?: number;
+  aggregateEnabled?: boolean;
 }
 
 export function ScoreBoard({
@@ -43,19 +48,25 @@ export function ScoreBoard({
   awayColor2 = '#000000',
   leagueName,
   onQuit,
+  bgColor,
+  competitionBadge,
+  aggregateHome = 0,
+  aggregateAway = 0,
+  aggregateEnabled = false,
 }: ScoreBoardProps) {
   const homeLabel = homeShort || TEAM_DISPLAY.getInitials(homeName);
   const awayLabel = awayShort || TEAM_DISPLAY.getInitials(awayName);
   const leagueBadge = leagueName ? leagueMeta[leagueName]?.badge : null;
+  const displayBadge = competitionBadge !== undefined ? competitionBadge : leagueBadge;
 
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, bgColor != null && { backgroundColor: bgColor }]}>
       {/* League badge + quit button row */}
       <View style={styles.leagueRow}>
         <View style={styles.leagueRowSpacer} />
-        {leagueBadge ? (
-          <Image source={{ uri: leagueBadge }} style={styles.leagueBadge} resizeMode="contain" />
+        {displayBadge ? (
+          <Image source={{ uri: displayBadge }} style={styles.leagueBadge} resizeMode="contain" />
         ) : (
           <View style={styles.leagueBadge} />
         )}
@@ -87,6 +98,9 @@ export function ScoreBoard({
             </Animated.View>
           </View>
           <Text style={styles.timerText}>{timerLabel}</Text>
+          {aggregateEnabled && (
+            <Text style={styles.aggregateText}>AGG {aggregateHome + homeScore}-{aggregateAway + awayScore}</Text>
+          )}
         </View>
 
         {/* Away side */}
@@ -120,8 +134,6 @@ const styles = StyleSheet.create({
     paddingTop: 4,
     paddingBottom: 20,
     backgroundColor: Colors.surface,
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.border,
     alignItems: 'center',
   },
   leagueRow: {
@@ -137,17 +149,17 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   quitBtn: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingHorizontal: 14,
+    paddingVertical: 7,
     borderRadius: 8,
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: 'rgba(230,57,70,0.2)',
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.12)',
+    borderColor: 'rgba(230,57,70,0.4)',
   },
   quitBtnText: {
-    color: 'rgba(255,255,255,0.6)',
+    color: '#E63946',
     fontSize: 11,
-    fontWeight: '700',
+    fontWeight: '800',
     letterSpacing: 1,
   },
   leagueBadge: {
@@ -229,5 +241,12 @@ const styles = StyleSheet.create({
   badgeOverlayImg: {
     width: BADGE_SIZE,
     height: BADGE_SIZE,
+  },
+  aggregateText: {
+    color: 'rgba(255,255,255,0.5)',
+    fontSize: 9,
+    fontWeight: '700',
+    letterSpacing: 1,
+    marginTop: -1,
   },
 });

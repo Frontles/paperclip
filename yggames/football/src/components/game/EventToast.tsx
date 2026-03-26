@@ -7,9 +7,11 @@ import type { ToastData } from '@/hooks/useMatchEvents';
 
 interface SingleToastProps {
   toast: ToastData;
+  goalBg?: string;
+  goalBorder?: string;
 }
 
-function SingleToast({ toast }: SingleToastProps) {
+function SingleToast({ toast, goalBg, goalBorder }: SingleToastProps) {
   const translateX = useRef(new Animated.Value(300)).current;
   const opacity = useRef(new Animated.Value(0)).current;
 
@@ -29,13 +31,18 @@ function SingleToast({ toast }: SingleToastProps) {
     ]).start();
   }, [opacity, translateX]);
 
-  const isGoal = toast.type === 'goal';
+  const typeStyle =
+    toast.type === 'goal'
+      ? [styles.toastGoal, goalBg ? { backgroundColor: goalBg } : null, goalBorder ? { borderColor: goalBorder } : null]
+      : toast.type === 'yellow_card'
+        ? [styles.toastYellowCard]
+        : [styles.toastRedCard];
 
   return (
     <Animated.View
       style={[
         styles.toast,
-        isGoal ? styles.toastGoal : styles.toastRedCard,
+        ...typeStyle,
         { opacity, transform: [{ translateX }] },
       ]}
     >
@@ -48,15 +55,17 @@ function SingleToast({ toast }: SingleToastProps) {
 
 export interface EventToastStackProps {
   toasts: ToastData[];
+  goalBg?: string;
+  goalBorder?: string;
 }
 
-export function EventToastStack({ toasts }: EventToastStackProps) {
+export function EventToastStack({ toasts, goalBg, goalBorder }: EventToastStackProps) {
   if (toasts.length === 0) return null;
 
   return (
     <View style={styles.stack} pointerEvents="none">
       {toasts.map((t) => (
-        <SingleToast key={t.id} toast={t} />
+        <SingleToast key={t.id} toast={t} goalBg={goalBg} goalBorder={goalBorder} />
       ))}
     </View>
   );
@@ -87,7 +96,7 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   toastGoal: {
-    backgroundColor: Colors.primaryDark,
+    backgroundColor: '#1a3a28',
     borderWidth: 1,
     borderColor: Colors.goalGold,
   },
@@ -95,6 +104,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.redCard,
     borderWidth: 1,
     borderColor: '#ff6b78',
+  },
+  toastYellowCard: {
+    backgroundColor: '#8B8000',
+    borderWidth: 1,
+    borderColor: '#FFD700',
   },
   toastText: {
     color: Colors.textPrimary,

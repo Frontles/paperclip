@@ -1,134 +1,151 @@
-import { View, Text, StyleSheet } from 'react-native';
-import { Image } from 'expo-image';
-import type { Player } from '@/types/index';
-import { Colors } from '@/constants/colors';
-import type { TranslationKey } from '@/hooks/useI18n';
+import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { Image } from "expo-image";
+import { LinearGradient } from "expo-linear-gradient";
+import type { Player } from "@/types/index";
+import { Colors } from "@/constants/colors";
+import type { TranslationKey } from "@/hooks/useI18n";
+
+const CARD_W = Dimensions.get("window").width - 100;
+const IMAGE_H = CARD_W * 0.8;
 
 export interface MotmCardProps {
   player: Player;
   goals: number;
+  assists: number;
+  teamColor: string;
   t: (key: TranslationKey) => string;
 }
 
-export function MotmCard({ player, goals, t }: MotmCardProps) {
+export function MotmCard({
+  player,
+  goals,
+  assists,
+  teamColor,
+  t,
+}: MotmCardProps) {
   return (
-    <View style={styles.motmCard}>
-      <Image
-        source={{ uri: player.cardImageUrl }}
-        style={styles.motmCardImage}
-        contentFit="contain"
-        transition={300}
-      />
-      <Text style={styles.motmName} numberOfLines={1}>
-        {player.name}
-      </Text>
-      <View style={styles.motmMeta}>
-        <Text style={styles.motmPosition}>{player.positionGroup}</Text>
-        <Text style={styles.motmMetaDivider}>·</Text>
-        <Text style={styles.motmTeam} numberOfLines={1}>
-          {player.team}
+    <View style={styles.container}>
+      <LinearGradient
+        colors={["#1a1a2e", "#16213e", "#0f3460"]}
+        style={styles.card}
+      >
+        {/* Player image */}
+        <Image
+          source={{ uri: player.cardImageUrl }}
+          style={styles.playerImage}
+          contentFit="contain"
+          transition={300}
+        />
+
+        {/* Player name */}
+        <Text style={styles.playerName} numberOfLines={1}>
+          {player.name}
         </Text>
-      </View>
-      {goals > 0 && (
-        <Text style={styles.motmGoals}>
-          {'⚽'.repeat(Math.min(goals, 5))} {goals}{' '}
-          {goals === 1 ? t('summary.goal') : t('summary.goals')}
-        </Text>
-      )}
-      <View style={styles.motmStats}>
-        <View style={styles.motmStat}>
-          <Text style={styles.motmStatValue}>{player.stats.overall}</Text>
-          <Text style={styles.motmStatLabel}>OVR</Text>
-        </View>
-        <View style={styles.motmStatDivider} />
-        <View style={styles.motmStat}>
-          <Text style={styles.motmStatValue}>{player.stats.finishing}</Text>
-          <Text style={styles.motmStatLabel}>FIN</Text>
-        </View>
-        <View style={styles.motmStatDivider} />
-        <View style={styles.motmStat}>
-          <Text style={styles.motmStatValue}>{player.stats.pace}</Text>
-          <Text style={styles.motmStatLabel}>PAC</Text>
-        </View>
-      </View>
+
+        {/* Goals & Assists */}
+        {(goals > 0 || assists > 0) && (
+          <View style={styles.statsRow}>
+            {goals > 0 && (
+              <View style={styles.statChip}>
+                <Text style={styles.statEmoji}>⚽</Text>
+                <Text style={styles.statCount}>{goals}</Text>
+                <Text style={styles.statLabel}>
+                  {goals === 1 ? t("summary.goal") : t("summary.goals")}
+                </Text>
+              </View>
+            )}
+            {assists > 0 && (
+              <View style={styles.statChip}>
+                <Text style={styles.statEmoji}>👟</Text>
+                <Text style={styles.statCount}>{assists}</Text>
+                <Text style={styles.statLabel}>
+                  {assists === 1 ? t("summary.assist") : t("summary.assists")}
+                </Text>
+              </View>
+            )}
+          </View>
+        )}
+
+        {/* MOTM badge */}
+        <LinearGradient
+          colors={["#FFD700", "#FFA500"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.motmBadge}
+        >
+          <Text style={styles.motmText}>
+            ★ {t("summary.motm").toUpperCase()}
+          </Text>
+        </LinearGradient>
+      </LinearGradient>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  motmCard: {
-    backgroundColor: Colors.surface,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: Colors.goalGold,
-    alignItems: 'center',
-    padding: 20,
-    gap: 8,
+  container: {
+    alignItems: "center",
   },
-  motmCardImage: {
-    width: 120,
-    height: 160,
-    borderRadius: 6,
+  card: {
+    width: CARD_W,
+    borderRadius: 14,
+    alignItems: "center",
+    paddingTop: 12,
+    paddingBottom: 14,
+    paddingHorizontal: 12,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    overflow: "hidden",
   },
-  motmMeta: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
+  playerImage: {
+    width: CARD_W - 32,
+    height: IMAGE_H,
   },
-  motmPosition: {
-    color: Colors.goalGold,
-    fontSize: 12,
-    fontWeight: '700',
-    letterSpacing: 1,
-  },
-  motmMetaDivider: {
-    color: Colors.textMuted,
-    fontSize: 12,
-  },
-  motmTeam: {
-    color: Colors.textSecondary,
-    fontSize: 12,
-    fontWeight: '500',
-    flexShrink: 1,
-  },
-  motmName: {
-    color: Colors.textPrimary,
+  playerName: {
+    color: "#fff",
     fontSize: 18,
-    fontWeight: '700',
-    textAlign: 'center',
+    fontWeight: "900",
+    letterSpacing: 0.5,
+    marginTop: 8,
+    textAlign: "center",
   },
-  motmGoals: {
-    color: Colors.goalGold,
+  statsRow: {
+    flexDirection: "row",
+    gap: 10,
+    marginTop: 8,
+  },
+  statChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
+    gap: 5,
+  },
+  statEmoji: {
+    fontSize: 12,
+  },
+  statCount: {
+    color: "#FFD700",
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "900",
   },
-  motmStats: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 4,
-    backgroundColor: Colors.background,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    gap: 12,
-  },
-  motmStat: {
-    alignItems: 'center',
-  },
-  motmStatValue: {
-    color: Colors.goalGold,
-    fontSize: 20,
-    fontWeight: '900',
-  },
-  motmStatLabel: {
-    color: Colors.textMuted,
+  statLabel: {
+    color: "rgba(255,255,255,0.5)",
     fontSize: 10,
-    fontWeight: '600',
-    letterSpacing: 1,
+    fontWeight: "600",
   },
-  motmStatDivider: {
-    width: 1,
-    height: 32,
-    backgroundColor: Colors.border,
+  motmBadge: {
+    marginTop: 10,
+    paddingHorizontal: 18,
+    paddingVertical: 6,
+    borderRadius: 16,
+  },
+  motmText: {
+    color: "#1a1a2e",
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1.5,
   },
 });

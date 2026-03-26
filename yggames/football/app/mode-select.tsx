@@ -88,8 +88,6 @@ export default function ModeSelectScreen() {
   const router = useRouter();
   const { t } = useI18n();
   const { play } = useSound();
-  const homeTeam = useMatchStore((s) => s.homeTeam);
-  const awayTeam = useMatchStore((s) => s.awayTeam);
   const setSelectedMode = useMatchStore((s) => s.setSelectedMode);
 
   const handleMode = (mode: 'plinko' | 'arena' | 'keeper-clash') => {
@@ -100,6 +98,7 @@ export default function ModeSelectScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <LinearGradient colors={['#0a1f14', '#122a1c', '#0d2818']} style={StyleSheet.absoluteFill} />
       {/* Back */}
       <TouchableOpacity
         onPress={() => router.back()}
@@ -111,32 +110,8 @@ export default function ModeSelectScreen() {
 
       {/* Header */}
       <View style={styles.header}>
-        {homeTeam && awayTeam ? (
-          <>
-            <TeamBadge
-              name={homeTeam.name}
-              badge={homeTeam.badge}
-              color={homeTeam.primaryColor}
-              teamShort={homeTeam.teamShort}
-            />
-            <View style={styles.vsContainer}>
-              <Text style={styles.vs}>{t('modeSelect.vs')}</Text>
-            </View>
-            <TeamBadge
-              name={awayTeam.name}
-              badge={awayTeam.badge}
-              color={awayTeam.primaryColor}
-              teamShort={awayTeam.teamShort}
-            />
-          </>
-        ) : (
-          <Text style={styles.screenTitle}>{t('modeSelect.title')}</Text>
-        )}
-      </View>
-
-      {homeTeam && awayTeam ? (
         <Text style={styles.screenTitle}>{t('modeSelect.title')}</Text>
-      ) : null}
+      </View>
 
       {/* Mode Cards */}
       <ScrollView

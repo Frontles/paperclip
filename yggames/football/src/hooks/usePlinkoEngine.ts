@@ -2,6 +2,7 @@ import { useRef, useEffect, useMemo, useCallback, useState } from "react";
 import { GameConfig } from "@/constants/gameConfig";
 
 // ─── Config ───────────────────────────────────────────────────
+// Not: gameConfig'i değiştirince görmek için bu dosyayı da kaydet veya uygulamayı yeniden başlat
 const GOAL_H = 40;
 const BR = GameConfig.ballRadius;
 const PR = GameConfig.pegRadius;
@@ -87,7 +88,8 @@ function makePegs(w: number, h: number): PegPosition[] {
     const n = rows[ri];
     // Aşağıdan yukarıya: son satır (index 6) bot'ta, ilk satır (index 0) en yukarda
     const y = bot - (rows.length - 1 - ri) * dy;
-    const rw = (w - pad * 2) * (n / maxN);
+    const extraPad = n === 5 ? BR * 0.5 : 0;
+    const rw = (w - (pad + extraPad) * 2) * (n / maxN);
     const sx = (w - rw) / 2;
     const g = n > 1 ? rw / (n - 1) : 0;
     for (let c = 0; c < n; c++) {
@@ -239,7 +241,9 @@ export function usePlinkoEngine({
   });
   cbs.current = { onGoal, onBallBounce, teams: [homeTeamName, awayTeamName] };
 
-  const [renderBalls, setRenderBalls] = useState<[BallRenderState, BallRenderState]>([
+  const [renderBalls, setRenderBalls] = useState<
+    [BallRenderState, BallRenderState]
+  >([
     { x: -100, y: -100, color: homeColor },
     { x: -100, y: -100, color: awayColor },
   ]);
@@ -331,8 +335,18 @@ export function usePlinkoEngine({
     }
 
     setRenderBalls([
-      { x: ballsRef.current[0].x, y: ballsRef.current[0].y, color: homeColor, badge: homeBadge },
-      { x: ballsRef.current[1].x, y: ballsRef.current[1].y, color: awayColor, badge: awayBadge },
+      {
+        x: ballsRef.current[0].x,
+        y: ballsRef.current[0].y,
+        color: homeColor,
+        badge: homeBadge,
+      },
+      {
+        x: ballsRef.current[1].x,
+        y: ballsRef.current[1].y,
+        color: awayColor,
+        badge: awayBadge,
+      },
     ]);
   }, [W, H, pegs, goal, homeColor, awayColor, homeBadge, awayBadge]);
 

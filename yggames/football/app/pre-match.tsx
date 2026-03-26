@@ -34,6 +34,7 @@ import {
 } from '@/stores/squadStore';
 import { useI18n } from '@/hooks/useI18n';
 import { useSound } from '@/hooks/useSound';
+import { getCompetitionColors } from '@/constants/competitionMeta';
 import type { Player, Team, PositionGroup } from '@/types/index';
 
 const { width: SCREEN_W } = Dimensions.get('window');
@@ -418,12 +419,14 @@ function InteractivePitch({
               pitchStyles.slotTouch,
               {
                 width: dotSize + 20,
-                height: dotSize + 18,
+                height: dotSize + 28,
                 left: (pos.x / 100) * PITCH_W - (dotSize + 20) / 2,
-                top: (pos.y / 100) * PITCH_H - (dotSize + 18) / 2,
+                top: (pos.y / 100) * PITCH_H - (dotSize + 28) / 2,
               },
             ]}
           >
+            {/* Position label above dot */}
+            <Text style={pitchStyles.posLabel}>{pos.label}</Text>
             <Animated.View
               entering={FadeIn.delay(i * 30).duration(250)}
               style={[
@@ -445,7 +448,7 @@ function InteractivePitch({
               )}
             </Animated.View>
             <Text style={pitchStyles.playerName} numberOfLines={1}>
-              {isEmpty ? posGroupLabel(pos.group) : player.name.split(' ').pop()}
+              {isEmpty ? pos.label : player.name.split(' ').pop()}
             </Text>
           </TouchableOpacity>
         );
@@ -531,6 +534,13 @@ const pitchStyles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  posLabel: {
+    color: 'rgba(255,255,255,0.5)',
+    fontSize: 8,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+    marginBottom: 1,
   },
   playerDot: {
     alignItems: 'center',
@@ -629,12 +639,22 @@ export default function PreMatchScreen() {
   const homeTeam = useMatchStore((s) => s.homeTeam)!;
   const awayTeam = useMatchStore((s) => s.awayTeam)!;
   const selectedMode = useMatchStore((s) => s.selectedMode);
+  const competitionType = useMatchStore((s) => s.competitionType);
+  const compColors = getCompetitionColors(competitionType);
 
   // Settings
   const matchDuration = useSettingsStore((s) => s.matchDuration);
   const setMatchDuration = useSettingsStore((s) => s.setMatchDuration);
   const extraTimeEnabled = useSettingsStore((s) => s.extraTimeEnabled);
   const setExtraTimeEnabled = useSettingsStore((s) => s.setExtraTimeEnabled);
+
+  // Aggregate
+  const aggregateEnabled = useMatchStore((s) => s.aggregateEnabled);
+  const homeAggregate = useMatchStore((s) => s.homeAggregate);
+  const awayAggregate = useMatchStore((s) => s.awayAggregate);
+  const setAggregateEnabled = useMatchStore((s) => s.setAggregateEnabled);
+  const setHomeAggregate = useMatchStore((s) => s.setHomeAggregate);
+  const setAwayAggregate = useMatchStore((s) => s.setAwayAggregate);
 
   // Squad store
   const { saveSquad, getSquad } = useSquadStore();
@@ -675,8 +695,14 @@ export default function PreMatchScreen() {
   const [pickerSlotIndex, setPickerSlotIndex] = useState(0);
   const [pickerSlotGroup, setPickerSlotGroup] = useState<PositionGroup>('FWD');
 
-  // Load saved squads or auto-pick on mount
+  // Load saved squads or auto-pick on mount (hydration bekle)
+  const [squadHydrated, setSquadHydrated] = useState(useSquadStore.persist.hasHydrated());
   useEffect(() => {
+    const unsub = useSquadStore.persist.onFinishHydration(() => setSquadHydrated(true));
+    return unsub;
+  }, []);
+  useEffect(() => {
+    if (!squadHydrated) return;
     const loadTeamSlots = (team: Team, form: Formation, setF: (f: Formation) => void, setSl: (s: (Player | null)[]) => void) => {
       const saved = getSquad(team.name);
       if (saved) {
@@ -703,7 +729,7 @@ export default function PreMatchScreen() {
     loadTeamSlots(homeTeam, homeFormation, setHomeFormation, setHomeSlots);
     loadTeamSlots(awayTeam, awayFormation, setAwayFormation, setAwaySlots);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [homeTeam.name, awayTeam.name]);
+  }, [homeTeam.name, awayTeam.name, squadHydrated]);
 
   // Slot press → open picker
   const handleSlotPress = useCallback((slotIndex: number) => {
@@ -772,7 +798,7 @@ export default function PreMatchScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <LinearGradient colors={['#081a10', '#0f2a1a', '#0a1f14']} style={StyleSheet.absoluteFill} />
+      <LinearGradient colors={compColors.gradientColors} style={StyleSheet.absoluteFill} />
 
       {/* Header */}
       <View style={styles.topBar}>
@@ -873,6 +899,56 @@ export default function PreMatchScreen() {
               </Text>
             </TouchableOpacity>
           </View>
+
+          {/* Aggregate / Score Advantage */}
+          <View style={styles.settingRow}>
+            <Text style={styles.settingLabel}>{t('preMatch.aggregate')}</Text>
+            <TouchableOpacity
+              style={[styles.toggleBtn, aggregateEnabled && styles.toggleBtnActive]}
+              onPress={() => { play('button_tap'); setAggregateEnabled(!aggregateEnabled); }}
+              activeOpacity={0.7}
+            >
+              <Text style={[styles.toggleText, aggregateEnabled && styles.toggleTextActive]}>
+                {aggregateEnabled ? t('settings.on') : t('settings.off')}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          {aggregateEnabled && (
+            <View style={styles.aggregateSection}>
+              <View style={styles.aggregateTeamRow}>
+                <Text style={styles.aggregateTeamLabel}>{homeTeam.teamShort || homeTeam.name.slice(0, 3).toUpperCase()}</Text>
+                <TouchableOpacity
+                  style={styles.aggBtn}
+                  onPress={() => { play('button_tap'); setHomeAggregate(Math.max(0, homeAggregate - 1)); }}
+                >
+                  <Text style={styles.aggBtnText}>−</Text>
+                </TouchableOpacity>
+                <Text style={styles.aggValue}>{homeAggregate}</Text>
+                <TouchableOpacity
+                  style={styles.aggBtn}
+                  onPress={() => { play('button_tap'); setHomeAggregate(Math.min(9, homeAggregate + 1)); }}
+                >
+                  <Text style={styles.aggBtnText}>+</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.aggregateTeamRow}>
+                <Text style={styles.aggregateTeamLabel}>{awayTeam.teamShort || awayTeam.name.slice(0, 3).toUpperCase()}</Text>
+                <TouchableOpacity
+                  style={styles.aggBtn}
+                  onPress={() => { play('button_tap'); setAwayAggregate(Math.max(0, awayAggregate - 1)); }}
+                >
+                  <Text style={styles.aggBtnText}>−</Text>
+                </TouchableOpacity>
+                <Text style={styles.aggValue}>{awayAggregate}</Text>
+                <TouchableOpacity
+                  style={styles.aggBtn}
+                  onPress={() => { play('button_tap'); setAwayAggregate(Math.min(9, awayAggregate + 1)); }}
+                >
+                  <Text style={styles.aggBtnText}>+</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          )}
         </Animated.View>
 
         <View style={{ height: 100 }} />
@@ -1027,6 +1103,47 @@ const styles = StyleSheet.create({
   toggleBtnActive: { backgroundColor: 'rgba(125,206,160,0.15)', borderColor: Colors.primary },
   toggleText: { color: Colors.textMuted, fontSize: 13, fontWeight: '700' },
   toggleTextActive: { color: Colors.textPrimary },
+
+  aggregateSection: {
+    gap: 10,
+    backgroundColor: 'rgba(255,255,255,0.03)',
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 14,
+  },
+  aggregateTeamRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  aggregateTeamLabel: {
+    color: Colors.textSecondary,
+    fontSize: 13,
+    fontWeight: '700',
+    width: 40,
+  },
+  aggBtn: {
+    width: 32,
+    height: 32,
+    borderRadius: 8,
+    backgroundColor: 'rgba(125,206,160,0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(125,206,160,0.2)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  aggBtnText: {
+    color: Colors.primary,
+    fontSize: 18,
+    fontWeight: '700',
+  },
+  aggValue: {
+    color: Colors.textPrimary,
+    fontSize: 22,
+    fontWeight: '900',
+    width: 30,
+    textAlign: 'center',
+  },
 
   bottomBar: { paddingHorizontal: 16, paddingBottom: 16, paddingTop: 8 },
   startBtn: {

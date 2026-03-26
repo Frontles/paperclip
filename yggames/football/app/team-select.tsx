@@ -17,6 +17,7 @@ import { getTeamsByLeague, getAllLeagues } from '@/services/playerDataService';
 import { LEAGUE_DISPLAY_NAMES } from '@/types/index';
 import type { Team } from '@/types/index';
 import leagueMetaData from '@/constants/leagueMeta.json';
+import { COMPETITIONS, COMPETITION_META, type CompetitionType } from '@/constants/competitionMeta';
 
 const leagueMeta = leagueMetaData as Record<string, { badge: string; logo: string; name: string }>;
 
@@ -205,7 +206,7 @@ function TeamPanel({ side, sideLabel, leagues, leagueIndex, teamIndex, onLeagueC
 export default function TeamSelectScreen() {
   const router = useRouter();
   const { t } = useI18n();
-  const { setHomeTeam, setAwayTeam } = useMatchStore();
+  const { setHomeTeam, setAwayTeam, setCompetitionType } = useMatchStore();
 
   const allLeagues = useMemo(() => getAllLeagues(), []);
 
@@ -213,6 +214,7 @@ export default function TeamSelectScreen() {
   const [homeTeamIdx, setHomeTeamIdx] = useState(0);
   const [awayLeagueIdx, setAwayLeagueIdx] = useState(0);
   const [awayTeamIdx, setAwayTeamIdx] = useState(0);
+  const [compIdx, setCompIdx] = useState(0);
 
   const getTeam = useCallback((leagueIdx: number, teamIdx: number) => {
     const league = allLeagues[leagueIdx];
@@ -247,15 +249,20 @@ export default function TeamSelectScreen() {
     setAwayTeamIdx(prev => wrap(prev + d, count));
   }, [allLeagues, awayLeagueIdx]);
 
+  const handleCompChange = useCallback((d: number) => {
+    setCompIdx(prev => ((prev + d) % COMPETITIONS.length + COMPETITIONS.length) % COMPETITIONS.length);
+  }, []);
+
   const handleConfirm = useCallback(() => {
     const home = getTeam(homeLeagueIdx, homeTeamIdx);
     const away = getTeam(awayLeagueIdx, awayTeamIdx);
     if (home && away) {
       setHomeTeam(home);
       setAwayTeam(away);
+      setCompetitionType(COMPETITIONS[compIdx]);
       router.push('/pre-match');
     }
-  }, [homeLeagueIdx, homeTeamIdx, awayLeagueIdx, awayTeamIdx, getTeam, setHomeTeam, setAwayTeam, router]);
+  }, [homeLeagueIdx, homeTeamIdx, awayLeagueIdx, awayTeamIdx, getTeam, setHomeTeam, setAwayTeam, setCompetitionType, compIdx, router]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -270,6 +277,22 @@ export default function TeamSelectScreen() {
         </TouchableOpacity>
         <Text style={styles.titleText}>{t('teamSelection.title')}</Text>
         <View style={{ width: 40 }} />
+      </View>
+
+      {/* Competition selector */}
+      <View style={styles.compRow}>
+        <ArrowBtn direction="left" onPress={() => handleCompChange(-1)} size="sm" />
+        {(() => {
+          const comp = COMPETITIONS[compIdx];
+          const meta = COMPETITION_META[comp];
+          const badge = meta.badge;
+          return badge ? (
+            <Image source={{ uri: badge }} style={styles.compBadge} resizeMode="contain" />
+          ) : (
+            <Text style={styles.compName}>{t(meta.nameKey as any)}</Text>
+          );
+        })()}
+        <ArrowBtn direction="right" onPress={() => handleCompChange(1)} size="sm" />
       </View>
 
       {/* Two panels */}
@@ -323,6 +346,27 @@ export default function TeamSelectScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+
+  // Competition selector
+  compRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    paddingVertical: 4,
+  },
+  compBadge: {
+    width: 120,
+    height: 40,
+  },
+  compName: {
+    color: Colors.textSecondary,
+    fontSize: 12,
+    fontWeight: '700',
+    letterSpacing: 1,
+    width: 120,
+    textAlign: 'center',
   },
 
   // Top bar

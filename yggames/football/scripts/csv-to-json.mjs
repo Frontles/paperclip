@@ -1,6 +1,7 @@
 /**
  * Pre-build script: converts docs/eafc26-men.csv to src/data/players.json
- * Only keeps the 6 MVP leagues and columns needed by the app.
+ * Pass 1: Club players from 6 MVP leagues
+ * Pass 2: National team squads (26 per nation, position-balanced)
  *
  * Run: node scripts/csv-to-json.mjs
  */
@@ -19,6 +20,24 @@ const MVP_LEAGUES = new Set([
   'Trendyol Süper Lig',
   "Ligue 1 McDonald's",
 ]);
+
+// National team config
+const NATIONAL_ID_OFFSET = 1_000_000;
+const NATIONAL_SQUAD_SIZE = 26;
+// Position-balanced squad: 3 GK, 8 DEF, 8 MID, 7 FWD = 26
+const SQUAD_TEMPLATE = { GK: 3, DEF: 8, MID: 8, FWD: 7 };
+
+// Load national team metadata
+const nationalMetaPath = join(ROOT, 'src', 'constants', 'nationalTeamMeta.json');
+const nationalMeta = JSON.parse(readFileSync(nationalMetaPath, 'utf-8'));
+
+// Position mapping (same as types/index.ts POSITION_MAP)
+const POSITION_MAP = {
+  GK: 'GK',
+  CB: 'DEF', LB: 'DEF', RB: 'DEF', LWB: 'DEF', RWB: 'DEF',
+  CM: 'MID', CDM: 'MID', CAM: 'MID', LM: 'MID', RM: 'MID',
+  ST: 'FWD', CF: 'FWD', LW: 'FWD', RW: 'FWD', LF: 'FWD', RF: 'FWD',
+};
 
 // CSV column indices (0-based)
 const COL = {
@@ -60,34 +79,14 @@ function parseLine(line) {
   return result;
 }
 
-const csvPath = join(ROOT, 'docs', 'eafc26-men.csv');
-const raw = readFileSync(csvPath, 'utf-8');
-const lines = raw.split('\n');
-
-// Skip header row
-const players = [];
-let skipped = 0;
-
-for (let i = 1; i < lines.length; i++) {
-  const line = lines[i].trim();
-  if (!line) continue;
-
-  const cols = parseLine(line);
-  const league = cols[COL.LEAGUE];
-
-  if (!MVP_LEAGUES.has(league)) {
-    skipped++;
-    continue;
-  }
-
+function parsePlayer(cols) {
   const id = parseInt(cols[COL.ID], 10);
-  if (isNaN(id)) continue;
-
-  players.push({
+  if (isNaN(id)) return null;
+  return {
     id,
     name: cols[COL.NAME],
     team: cols[COL.TEAM],
-    league,
+    league: cols[COL.LEAGUE],
     position: cols[COL.POSITION],
     nation: cols[COL.NATION],
     age: parseInt(cols[COL.AGE], 10) || 0,
@@ -102,11 +101,120 @@ for (let i = 1; i < lines.length; i++) {
       physical: parseInt(cols[COL.PHY], 10) || 0,
     },
     cardImageUrl: cols[COL.CARD] || '',
-  });
+  };
 }
+
+const csvPath = join(ROOT, 'docs', 'eafc26-men.csv');
+const raw = readFileSync(csvPath, 'utf-8');
+const lines = raw.split('\n');
+
+// ─── Pass 1: Club players ────────────────────────────────────
+const players = [];
+const allParsed = []; // all players for national team selection
+let skipped = 0;
+
+for (let i = 1; i < lines.length; i++) {
+  const line = lines[i].trim();
+  if (!line) continue;
+
+  const cols = parseLine(line);
+  const player = parsePlayer(cols);
+  if (!player) continue;
+
+  allParsed.push(player);
+
+  if (MVP_LEAGUES.has(player.league)) {
+    players.push(player);
+  } else {
+    skipped++;
+  }
+}
+
+console.log(`✓ Pass 1: ${players.length} club players from MVP leagues`);
+console.log(`  Skipped ${skipped} players from non-MVP leagues`);
+
+// ─── Pass 2: National teams ──────────────────────────────────
+
+// Group all players by nation
+const playersByNation = new Map();
+for (const p of allParsed) {
+  if (!p.nation) continue;
+  const existing = playersByNation.get(p.nation);
+  if (existing) existing.push(p);
+  else playersByNation.set(p.nation, [p]);
+}
+
+let nationalCount = 0;
+const nations = Object.keys(nationalMeta);
+
+for (const nation of nations) {
+  const meta = nationalMeta[nation];
+  const nationPlayers = playersByNation.get(nation);
+  if (!nationPlayers || nationPlayers.length < 20) continue;
+
+  // Group by position
+  const byGroup = { GK: [], DEF: [], MID: [], FWD: [] };
+  for (const p of nationPlayers) {
+    const group = POSITION_MAP[p.position] ?? 'MID';
+    byGroup[group].push(p);
+  }
+
+  // Sort each group by overall desc
+  for (const group of Object.keys(byGroup)) {
+    byGroup[group].sort((a, b) => b.stats.overall - a.stats.overall);
+  }
+
+  // Pick position-balanced squad
+  const squad = [];
+  const usedIds = new Set();
+
+  for (const [group, count] of Object.entries(SQUAD_TEMPLATE)) {
+    const available = byGroup[group];
+    let picked = 0;
+    for (const p of available) {
+      if (picked >= count) break;
+      if (usedIds.has(p.id)) continue;
+      squad.push(p);
+      usedIds.add(p.id);
+      picked++;
+    }
+  }
+
+  // Fill remaining slots with best available (if some positions were short)
+  if (squad.length < NATIONAL_SQUAD_SIZE) {
+    const remaining = nationPlayers
+      .filter(p => !usedIds.has(p.id))
+      .sort((a, b) => b.stats.overall - a.stats.overall);
+    for (const p of remaining) {
+      if (squad.length >= NATIONAL_SQUAD_SIZE) break;
+      squad.push(p);
+      usedIds.add(p.id);
+    }
+  }
+
+  // Add to players with offset ID, league = continent, team = nation
+  const continent = meta.continent; // "Europe" or "World"
+  for (const p of squad) {
+    players.push({
+      id: p.id + NATIONAL_ID_OFFSET,
+      name: p.name,
+      team: nation,
+      league: continent,
+      position: p.position,
+      nation: p.nation,
+      age: p.age,
+      stats: { ...p.stats },
+      cardImageUrl: p.cardImageUrl,
+    });
+    nationalCount++;
+  }
+}
+
+console.log(`✓ Pass 2: ${nationalCount} national team players (${nations.filter(n => (playersByNation.get(n)?.length ?? 0) >= 20).length} nations)`);
+
+// ─── Write output ────────────────────────────────────────────
 
 const outPath = join(ROOT, 'src', 'data', 'players.json');
 writeFileSync(outPath, JSON.stringify(players));
 
-console.log(`✓ Wrote ${players.length} players to src/data/players.json`);
-console.log(`  Skipped ${skipped} players from non-MVP leagues`);
+console.log(`✓ Total: ${players.length} players written to src/data/players.json`);

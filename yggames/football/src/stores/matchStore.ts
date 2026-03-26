@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { Team, MatchEvent } from '@/types/index';
+import type { CompetitionType } from '@/constants/competitionMeta';
 
 interface MatchStore {
   // Teams
@@ -12,6 +13,10 @@ interface MatchStore {
   // Game Mode
   selectedMode: 'plinko' | 'arena' | 'keeper-clash' | null;
   setSelectedMode: (mode: 'plinko' | 'arena' | 'keeper-clash') => void;
+
+  // Competition
+  competitionType: CompetitionType;
+  setCompetitionType: (type: CompetitionType) => void;
 
   // Score
   homeScore: number;
@@ -29,6 +34,14 @@ interface MatchStore {
   setCurrentMinute: (minute: number) => void;
   setExtraTime: (isExtra: boolean, amount: number) => void;
 
+  // Aggregate
+  aggregateEnabled: boolean;
+  homeAggregate: number;
+  awayAggregate: number;
+  setAggregateEnabled: (enabled: boolean) => void;
+  setHomeAggregate: (score: number) => void;
+  setAwayAggregate: (score: number) => void;
+
   // Reset
   clearMatch: () => void;
 }
@@ -44,6 +57,10 @@ export const useMatchStore = create<MatchStore>((set, get) => ({
   // Game Mode
   selectedMode: null,
   setSelectedMode: (mode) => set({ selectedMode: mode }),
+
+  // Competition
+  competitionType: 'friendly',
+  setCompetitionType: (type) => set({ competitionType: type }),
 
   // Score
   homeScore: 0,
@@ -68,6 +85,14 @@ export const useMatchStore = create<MatchStore>((set, get) => ({
   setCurrentMinute: (minute) => set({ currentMinute: minute }),
   setExtraTime: (isExtra, amount) => set({ isExtraTime: isExtra, extraTimeAmount: amount }),
 
+  // Aggregate
+  aggregateEnabled: false,
+  homeAggregate: 0,
+  awayAggregate: 0,
+  setAggregateEnabled: (enabled) => set({ aggregateEnabled: enabled }),
+  setHomeAggregate: (score) => set({ homeAggregate: score }),
+  setAwayAggregate: (score) => set({ awayAggregate: score }),
+
   // Reset
   clearMatch: () =>
     set({
@@ -78,5 +103,8 @@ export const useMatchStore = create<MatchStore>((set, get) => ({
       isExtraTime: false,
       extraTimeAmount: 0,
       selectedMode: null,
+      aggregateEnabled: false,
+      homeAggregate: 0,
+      awayAggregate: 0,
     }),
 }));

@@ -28,5 +28,15 @@
     "name": "Trendyol Süper Lig",
     "badge": "https://ii.upla.com.tr/2026/03/21/iJvr8.png",
     "logo": "https://ii.upla.com.tr/2026/03/21/iJvr8.png"
+  },
+  "Europe": {
+    "name": "Europe",
+    "badge": "https://r2.thesportsdb.com/images/media/league/badge/cwsp321698386224.png",
+    "logo": "https://r2.thesportsdb.com/images/media/league/badge/cwsp321698386224.png"
+  },
+  "World": {
+    "name": "World",
+    "badge": "https://ii.upla.com.tr/2026/03/26/iJEld.png",
+    "logo": "https://ii.upla.com.tr/2026/03/26/iJEld.png"
   }
 }
