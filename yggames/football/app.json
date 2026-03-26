@@ -27,7 +27,6 @@
         "backgroundColor": "#0d2818"
       },
       "package": "com.yggames.football",
-      "navigationBarColor": "transparent",
       "edgeToEdgeEnabled": true,
       "permissions": [
         "android.permission.MODIFY_AUDIO_SETTINGS"
